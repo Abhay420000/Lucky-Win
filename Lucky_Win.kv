@@ -4,139 +4,211 @@ Main:
 	orientation:"vertical"
 	BoxLayout:
 		FloatLayout:
-			Label:
-				font_size: "50dp"
-				id:b11
+			Image:
+				id:b0
+				source:"./ImData/A.PNG"
+				size_hint:(1,0.3333)
 				pos:(0,root.height)
-				size_hint:(1,0.3333)
-				text:"Y"
-			Label:
-				font_size: "50dp"
+				allow_stretch: True
+				keep_ratio: False
+			Image:
 				id:b1
-				pos:(0,root.height-self.size[1])
+				source:"./ImData/B.PNG"
 				size_hint:(1,0.3333)
-				text:"A"
-			Label:
-				font_size: "50dp"
+				pos:(0,root.height - 1*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
 				id:b2
-				pos:(0,root.height-self.size[1]-b1.size[1])
+				source:"./ImData/C.PNG"
 				size_hint:(1,0.3333)
-				text:"B"
-			Label:
-				font_size: "50dp"
+				pos:(0,root.height - 2*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
 				id:b3
-				pos:(0,root.height-self.size[1]-b1.size[1]-b2.size[1])
+				source:"./ImData/D.PNG"
 				size_hint:(1,0.3333)
-				text:"C"
-			Label:
-				font_size: "50dp"
+				pos:(0,root.height - 3*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
 				id:b4
-				pos:(0,root.height-self.size[1]-b1.size[1]-b2.size[1]-b3.size[1])
+				source:"./ImData/E.PNG"
 				size_hint:(1,0.3333)
-				text:"X"
-		FloatLayout:
-			Label:
-				font_size: "50dp"
-				id:b55
-				pos:(b2.size[0],root.height)
-				size_hint:(1,0.3333)
-				text:"Y"
-			Label:
-				font_size: "50dp"
+				pos:(0,root.height - 4*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
 				id:b5
-				pos:(b2.size[0],root.height-self.size[1])
+				source:"./ImData/F.PNG"
 				size_hint:(1,0.3333)
-				text:"A"
-			Label:
-				font_size: "50dp"
+				pos:(0,root.height - 5*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
 				id:b6
-				pos:(b2.size[0],root.height-self.size[1]-b1.size[1])
+				source:"./ImData/G.PNG"
 				size_hint:(1,0.3333)
-				text:"B"
-			Label:
-				font_size: "50dp"
-				id:b7
-				pos:(b2.size[0],root.height-self.size[1]-b1.size[1]-b2.size[1])
-				size_hint:(1,0.3333)
-				text:"C"
-			Label:
-				font_size: "50dp"
-				id:b8
-				pos:(b2.size[0],root.height-self.size[1]-b1.size[1]-b2.size[1]-b3.size[1])
-				size_hint:(1,0.3333)
-				text:"X"
+				pos:(0,root.height - 6*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
 		FloatLayout:
-			Label:
-				font_size: "50dp"
-				id:b99
-				pos:(b2.size[0]+b6.size[0],root.height)
+			Image:
+				id:b7
+				source:"./ImData/A.PNG"
 				size_hint:(1,0.3333)
-				text:"Y"
-			Label:
-				font_size: "50dp"
+				pos:(self.size[0],root.height)
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				id:b8
+				source:"./ImData/B.PNG"
+				size_hint:(1,0.3333)
+				pos:(self.size[0],root.height - 1*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
 				id:b9
-				pos:(b2.size[0]+b6.size[0],root.height-self.size[1])
+				source:"./ImData/C.PNG"
 				size_hint:(1,0.3333)
-				text:"A"
-			Label:
-				font_size: "50dp"
+				pos:(self.size[0],root.height - 2*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
 				id:b10
-				pos:(b2.size[0]+b6.size[0],root.height-self.size[1]-b1.size[1])
+				source:"./ImData/D.PNG"
 				size_hint:(1,0.3333)
-				text:"B"
-			Label:
-				font_size: "50dp"
-				id:b11_
-				pos:(b2.size[0]+b6.size[0],root.height-self.size[1]-b1.size[1]-b2.size[1])
+				pos:(self.size[0],root.height - 3*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				id:b11
+				source:"./ImData/E.PNG"
 				size_hint:(1,0.3333)
-				text:"C"
-			Label:
-				font_size: "50dp"
+				pos:(self.size[0],root.height - 4*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
 				id:b12
-				pos:(b2.size[0]+b6.size[0],root.height-self.size[1]-b1.size[1]-b2.size[1]-b3.size[1])
+				source:"./ImData/F.PNG"
 				size_hint:(1,0.3333)
-				text:"X"
-	BoxLayout:
+				pos:(self.size[0],root.height - 5*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				id:b13
+				source:"./ImData/G.PNG"
+				size_hint:(1,0.3333)
+				pos:(self.size[0],root.height - 6*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+		FloatLayout:
+			Image:
+				id:b14
+				source:"./ImData/A.PNG"
+				size_hint:(1,0.3333)
+				pos:(2*self.size[0],root.height)
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				id:b15
+				source:"./ImData/B.PNG"
+				size_hint:(1,0.3333)
+				pos:(2*self.size[0],root.height - 1*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				id:b16
+				source:"./ImData/C.PNG"
+				size_hint:(1,0.3333)
+				pos:(2*self.size[0],root.height - 2*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				id:b17
+				source:"./ImData/D.PNG"
+				size_hint:(1,0.3333)
+				pos:(2*self.size[0],root.height - 3*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				id:b18
+				source:"./ImData/E.PNG"
+				size_hint:(1,0.3333)
+				pos:(2*self.size[0],root.height - 4*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				id:b19
+				source:"./ImData/F.PNG"
+				size_hint:(1, 0.3333)
+				pos:(2*self.size[0], root.height - 5*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				id:b20
+				source:"./ImData/G.PNG"
+				size_hint:(1, 0.3333)
+				pos:(2*self.size[0], root.height - 6*self.size[1])
+				allow_stretch: True
+				keep_ratio: False
+	FloatLayout:
+		canvas:
+			Color:
+				rgb:(0.1,0.1,0.1)
+			Rectangle:
+				size:b20.size[0]*3,b20.size[1]*3
+				pos:(0,0)
 		BoxLayout:
-			orientation:"vertical"
-			Button:
-				font_size: "20dp"
-				id:scrs
-				text:"Score: 0"
-				#on_state:print("my current state is {}".format(self.state))
-			Button:
-				font_size: "20dp"
-				id: target
-				text:"Targate: 2500"
+			size:b20.size[0]*3,b20.size[1]*3
+			pos:0,0
+			BoxLayout:
+				orientation:"vertical"
+				Label:
+					id::
+					font_size: "20dp"
+					font_name:'./Fonts/ARCADE.TTF'
+					id:scrs
+					text:"Score: 0"
+					#on_state:print("my current state is {}".format(self.state))
+				Label:
+					id::
+					font_size: "20dp"
+					id: target
+					font_name:'./Fonts/ARCADE.TTF'
+					text:"Targate: 2500"
 
-		BoxLayout:
-			orientation:"vertical"
-			FloatLayout:
-				canvas:
-					Color:
-						rgba:(0.2,0.2,0.2,1)
-					Rectangle:
+			BoxLayout:
+				orientation:"vertical"
+				FloatLayout:
+					Label:
+						text: "Power"
+						pos: scrs.size[0],scrs.pos[1]
+						font_name:'./Fonts/ARCADE.TTF'
+						font_size: "20dp"
+						size: scrs.size
+					ProgressBar:
+						id:pgpow
+						max: 28
 						size:scrs.size
-						pos:scrs.pos[0]+scrs.size[0],scrs.pos[1]
-						
-				ProgressBar:
-					id:pgpow
-					max: 28
-					size:scrs.size
-					pos:scrs.pos[0]+scrs.size[0],scrs.pos[1]
-			Button:
-				font_size: "55dp"
-				id:gobtn
-				text:"GO"
-				on_press:root.pp(),root.fixpointloc()
-				on_release:root.rollit()
-		BoxLayout:
-			orientation:"vertical"
-			Button:
-				font_size: "20dp"
-				id:lev
-				text:"Level: 1"
-			Button:
-				font_size: "20dp"
-				id:trys
-				text:"Chances: 10"
+						pos:scrs.pos[0]+scrs.size[0],scrs.pos[1] - scrs.pos[1]/2
+				Button:
+					font_size: "55dp"
+					id:gobtn
+					text:"GO"
+					font_name:'./Fonts/ARCADE.TTF'
+					on_press:root.pp(),root.fixpointloc()
+					on_release:root.rollit()
+			BoxLayout:
+				orientation:"vertical"
+				Label:
+					font_size: "20dp"
+					id:lev
+					font_name:'./Fonts/ARCADE.TTF'
+					text:"Level: 1"
+				Label:
+					font_size: "20dp"
+					id:trys
+					font_name:'./Fonts/ARCADE.TTF'
+					text:"Chances: 10"
