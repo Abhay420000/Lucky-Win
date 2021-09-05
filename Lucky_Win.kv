@@ -1,214 +1,334 @@
 Main:
 
+<DC@Widget>:
+	size_hint:None,None
+    size:(dp(100),dp(100))
+    pos:(0,0)
+    color:(1,1,1)
+
+<DCF@DC>:
+    canvas:
+        Color:
+            rgb:root.color
+        Ellipse:
+            pos:root.pos
+            size:root.size
+
+
 <Main>
 	orientation:"vertical"
-	BoxLayout:
-		FloatLayout:
-			Image:
-				id:b0
-				source:"./ImData/A.PNG"
-				size_hint:(1,0.3333)
-				pos:(0,root.height)
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b1
-				source:"./ImData/B.PNG"
-				size_hint:(1,0.3333)
-				pos:(0,root.height - 1*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b2
-				source:"./ImData/C.PNG"
-				size_hint:(1,0.3333)
-				pos:(0,root.height - 2*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b3
-				source:"./ImData/D.PNG"
-				size_hint:(1,0.3333)
-				pos:(0,root.height - 3*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b4
-				source:"./ImData/E.PNG"
-				size_hint:(1,0.3333)
-				pos:(0,root.height - 4*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b5
-				source:"./ImData/F.PNG"
-				size_hint:(1,0.3333)
-				pos:(0,root.height - 5*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b6
-				source:"./ImData/G.PNG"
-				size_hint:(1,0.3333)
-				pos:(0,root.height - 6*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-		FloatLayout:
-			Image:
-				id:b7
-				source:"./ImData/A.PNG"
-				size_hint:(1,0.3333)
-				pos:(self.size[0],root.height)
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b8
-				source:"./ImData/B.PNG"
-				size_hint:(1,0.3333)
-				pos:(self.size[0],root.height - 1*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b9
-				source:"./ImData/C.PNG"
-				size_hint:(1,0.3333)
-				pos:(self.size[0],root.height - 2*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b10
-				source:"./ImData/D.PNG"
-				size_hint:(1,0.3333)
-				pos:(self.size[0],root.height - 3*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b11
-				source:"./ImData/E.PNG"
-				size_hint:(1,0.3333)
-				pos:(self.size[0],root.height - 4*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b12
-				source:"./ImData/F.PNG"
-				size_hint:(1,0.3333)
-				pos:(self.size[0],root.height - 5*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b13
-				source:"./ImData/G.PNG"
-				size_hint:(1,0.3333)
-				pos:(self.size[0],root.height - 6*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-		FloatLayout:
-			Image:
-				id:b14
-				source:"./ImData/A.PNG"
-				size_hint:(1,0.3333)
-				pos:(2*self.size[0],root.height)
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b15
-				source:"./ImData/B.PNG"
-				size_hint:(1,0.3333)
-				pos:(2*self.size[0],root.height - 1*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b16
-				source:"./ImData/C.PNG"
-				size_hint:(1,0.3333)
-				pos:(2*self.size[0],root.height - 2*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b17
-				source:"./ImData/D.PNG"
-				size_hint:(1,0.3333)
-				pos:(2*self.size[0],root.height - 3*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b18
-				source:"./ImData/E.PNG"
-				size_hint:(1,0.3333)
-				pos:(2*self.size[0],root.height - 4*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b19
-				source:"./ImData/F.PNG"
-				size_hint:(1, 0.3333)
-				pos:(2*self.size[0], root.height - 5*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
-			Image:
-				id:b20
-				source:"./ImData/G.PNG"
-				size_hint:(1, 0.3333)
-				pos:(2*self.size[0], root.height - 6*self.size[1])
-				allow_stretch: True
-				keep_ratio: False
 	FloatLayout:
-		canvas:
-			Color:
-				rgb:(0.1,0.1,0.1)
-			Rectangle:
-				size:b20.size[0]*3,b20.size[1]*3
-				pos:(0,0)
+		size: root.size[0]/2, root.size[1]/2
+		BoxLayout:
+			size: root.size[0]/2, root.size[1]/2
+			pos: 0,root.size[1]/2
+			FloatLayout:
+				Image:
+					id:b0
+					source:"./ImData/A.PNG"
+					size_hint:(1,0.3333)
+					pos:(0,root.height)
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b1
+					source:"./ImData/B.PNG"
+					size_hint:(1,0.3333)
+					pos:(0,root.height - 1*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b2
+					source:"./ImData/C.PNG"
+					size_hint:(1,0.3333)
+					pos:(0,root.height - 2*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b3
+					source:"./ImData/D.PNG"
+					size_hint:(1,0.3333)
+					pos:(0,root.height - 3*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b4
+					source:"./ImData/E.PNG"
+					size_hint:(1,0.3333)
+					pos:(0,root.height - 4*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b5
+					source:"./ImData/F.PNG"
+					size_hint:(1,0.3333)
+					pos:(0,root.height - 5*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b6
+					source:"./ImData/G.PNG"
+					size_hint:(1,0.3333)
+					pos:(0,root.height - 6*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+			FloatLayout:
+				Image:
+					id:b7
+					source:"./ImData/A.PNG"
+					size_hint:(1,0.3333)
+					pos:(self.size[0],root.height)
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b8
+					source:"./ImData/B.PNG"
+					size_hint:(1,0.3333)
+					pos:(self.size[0],root.height - 1*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b9
+					source:"./ImData/C.PNG"
+					size_hint:(1,0.3333)
+					pos:(self.size[0],root.height - 2*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b10
+					source:"./ImData/D.PNG"
+					size_hint:(1,0.3333)
+					pos:(self.size[0],root.height - 3*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b11
+					source:"./ImData/E.PNG"
+					size_hint:(1,0.3333)
+					pos:(self.size[0],root.height - 4*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b12
+					source:"./ImData/F.PNG"
+					size_hint:(1,0.3333)
+					pos:(self.size[0],root.height - 5*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b13
+					source:"./ImData/G.PNG"
+					size_hint:(1,0.3333)
+					pos:(self.size[0],root.height - 6*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+			FloatLayout:
+				Image:
+					id:b14
+					source:"./ImData/A.PNG"
+					size_hint:(1,0.3333)
+					pos:(2*self.size[0],root.height)
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b15
+					source:"./ImData/B.PNG"
+					size_hint:(1,0.3333)
+					pos:(2*self.size[0],root.height - 1*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b16
+					source:"./ImData/C.PNG"
+					size_hint:(1,0.3333)
+					pos:(2*self.size[0],root.height - 2*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b17
+					source:"./ImData/D.PNG"
+					size_hint:(1,0.3333)
+					pos:(2*self.size[0],root.height - 3*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b18
+					source:"./ImData/E.PNG"
+					size_hint:(1,0.3333)
+					pos:(2*self.size[0],root.height - 4*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b19
+					source:"./ImData/F.PNG"
+					size_hint:(1, 0.3333)
+					pos:(2*self.size[0], root.height - 5*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+				Image:
+					id:b20
+					source:"./ImData/G.PNG"
+					size_hint:(1, 0.3333)
+					pos:(2*self.size[0], root.height - 6*self.size[1])
+					allow_stretch: True
+					keep_ratio: False
+					
+		DCF:
+			color:(0.13,0.13,0.13)
+			size:root.size[0]/20,root.size[1]/2
+			pos:-self.size[0]/2,root.size[1]/2
+		DCF:
+			color:(0.13,0.13,0.13)
+			size:root.size[0]/20,root.size[1]/2
+			pos:root.size[0]-self.size[0]/2,root.size[1]/2
+
+	FloatLayout:
+		Image:
+			source:"./DecImg/Bottom1.PNG"
+			allow_stretch: True
+			keep_ratio: False
+			size:b20.size[0]*3,b20.size[1]*3
+			pos:(0,0)
 		BoxLayout:
 			size:b20.size[0]*3,b20.size[1]*3
 			pos:0,0
 			BoxLayout:
 				orientation:"vertical"
 				Label:
-					id::
-					font_size: "20dp"
+					font_size: "30dp"
+					font_name:'./Fonts/ARCADE.TTF'
+					id:sc
+					text:"Score"
+					#on_state:print("my current state is {}".format(self.state))
+					canvas.before:
+						PushMatrix
+						Rotate:
+							angle: -12
+							origin: self.center
+					canvas.after:
+						PopMatrix
+				Label:
+					font_size: "30dp"
 					font_name:'./Fonts/ARCADE.TTF'
 					id:scrs
-					text:"Score: 0"
-					#on_state:print("my current state is {}".format(self.state))
+					text:"0"
+					canvas.before:
+						PushMatrix
+						Rotate:
+							angle: -12
+							origin: self.center
+					canvas.after:
+						PopMatrix
 				Label:
-					id::
-					font_size: "20dp"
+					font_size: "30dp"
+					font_name:'./Fonts/ARCADE.TTF'
+					text:"Targate"
+					canvas.before:
+						PushMatrix
+						Rotate:
+							angle: -12
+							origin: self.center
+					canvas.after:
+						PopMatrix
+				Label:
+					font_size: "30dp"
 					id: target
 					font_name:'./Fonts/ARCADE.TTF'
-					text:"Targate: 2500"
+					text:"2500"
+					canvas.before:
+						PushMatrix
+						Rotate:
+							angle: -12
+							origin: self.center
+					canvas.after:
+						PopMatrix
 
 			BoxLayout:
 				orientation:"vertical"
 				FloatLayout:
 					Label:
 						text: "Power"
-						pos: scrs.size[0],scrs.pos[1]
+						pos: sc.size[0], sc.pos[1]
 						font_name:'./Fonts/ARCADE.TTF'
-						font_size: "20dp"
+						font_size: "30dp"
 						size: scrs.size
 					ProgressBar:
 						id:pgpow
 						max: 28
-						size:scrs.size
-						pos:scrs.pos[0]+scrs.size[0],scrs.pos[1] - scrs.pos[1]/2
+						size:target.size
+						pos:target.size[0],target.pos[1] + target.size[1]/2
+					Label:
+						id:g2
+						text: "GO"
+						font_size: "31dp"
+						font_name:'./Fonts/ARCADE.TTF'
+						size: target.size
+						pos: target.size[0], g3.pos[1] + self.size[1]/2
+				Label:
+					id: g1
+					text: "GO"
+					font_name:'./Fonts/ARCADE.TTF'
+					font_size: "24dp"
+				Label:
+					id:g3
+					text: "GO"
+					font_name:'./Fonts/ARCADE.TTF'
+					font_size: "38dp"
 				Button:
-					font_size: "55dp"
+					font_size: "65dp"
 					id:gobtn
 					text:"GO"
+					background_normal:""
+					background_color:(0.2,0.4,1,0.5)
+					color:(1,1,0)
 					font_name:'./Fonts/ARCADE.TTF'
 					on_press:root.pp(),root.fixpointloc()
 					on_release:root.rollit()
 			BoxLayout:
 				orientation:"vertical"
 				Label:
-					font_size: "20dp"
+					font_size: "30dp"
+					font_name:'./Fonts/ARCADE.TTF'
+					text:"Level"
+					canvas.before:
+						PushMatrix
+						Rotate:
+							angle: +12
+							origin: self.center
+					canvas.after:
+						PopMatrix
+				Label:
+					font_size: "30dp"
 					id:lev
 					font_name:'./Fonts/ARCADE.TTF'
-					text:"Level: 1"
+					text:"1"
+					canvas.before:
+						PushMatrix
+						Rotate:
+							angle: +12
+							origin: self.center
+					canvas.after:
+						PopMatrix
 				Label:
-					font_size: "20dp"
+					font_size: "30dp"
+					font_name:'./Fonts/ARCADE.TTF'
+					text:"Chances"
+					canvas.before:
+						PushMatrix
+						Rotate:
+							angle: +12
+							origin: self.center
+					canvas.after:
+						PopMatrix
+				Label:
+					font_size: "30dp"
 					id:trys
 					font_name:'./Fonts/ARCADE.TTF'
-					text:"Chances: 10"
+					text:"10"
+					canvas.before:
+						PushMatrix
+						Rotate:
+							angle: +12
+							origin: self.center
+					canvas.after:
+						PopMatrix

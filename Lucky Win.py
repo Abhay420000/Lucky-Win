@@ -110,25 +110,25 @@ class Main(BoxLayout):
             self.lock.release()
             if int(self.ids.b0.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b0.pos[1] - Window.size[1]
-                self.ids.b0.pos[1] = Window.size[1] + junkspace - 5*self.ids.b0.height
+                self.ids.b0.pos[1] = Window.size[1] + junkspace - 7*self.ids.b0.height
             if int(self.ids.b1.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b1.pos[1] - Window.size[1]
-                self.ids.b1.pos[1] = Window.size[1] + junkspace - 5*self.ids.b1.height
+                self.ids.b1.pos[1] = Window.size[1] + junkspace - 7*self.ids.b1.height
             if int(self.ids.b2.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b2.pos[1] - Window.size[1]
-                self.ids.b2.pos[1] = Window.size[1] + junkspace - 5*self.ids.b2.height
+                self.ids.b2.pos[1] = Window.size[1] + junkspace - 7*self.ids.b2.height
             if int(self.ids.b3.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b3.pos[1] - Window.size[1]
-                self.ids.b3.pos[1] = Window.size[1] + junkspace - 5*self.ids.b3.height
+                self.ids.b3.pos[1] = Window.size[1] + junkspace - 7*self.ids.b3.height
             if int(self.ids.b4.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b4.pos[1] - Window.size[1]
-                self.ids.b4.pos[1] = Window.size[1] + junkspace - 5*self.ids.b4.height
+                self.ids.b4.pos[1] = Window.size[1] + junkspace - 7*self.ids.b4.height
             if int(self.ids.b5.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b5.pos[1] - Window.size[1]
-                self.ids.b5.pos[1] = Window.size[1] + junkspace - 5*self.ids.b5.height
+                self.ids.b5.pos[1] = Window.size[1] + junkspace - 7*self.ids.b5.height
             if int(self.ids.b6.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b6.pos[1] - Window.size[1]
-                self.ids.b6.pos[1] = Window.size[1] + junkspace - 5*self.ids.b6.height
+                self.ids.b6.pos[1] = Window.size[1] + junkspace - 7*self.ids.b6.height
         else:
             self.lock.acquire()
             self.sf1 = 1
@@ -141,26 +141,26 @@ class Main(BoxLayout):
             self.ids.b6.pos[1] -= self.speed
             self.sf1 = 0
             self.lock.release()
-            if int(self.ids.b0.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b0.pos[1]
+            if int(self.ids.b0.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b0.pos[1]
                 self.ids.b0.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b1.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b1.pos[1]
+            if int(self.ids.b1.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b1.pos[1]
                 self.ids.b1.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b2.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b2.pos[1]
+            if int(self.ids.b2.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b2.pos[1]
                 self.ids.b2.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b3.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b3.pos[1]
+            if int(self.ids.b3.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b3.pos[1]
                 self.ids.b3.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b4.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b4.pos[1]
+            if int(self.ids.b4.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b4.pos[1]
                 self.ids.b4.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b5.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b5.pos[1]
+            if int(self.ids.b5.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b5.pos[1]
                 self.ids.b5.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b6.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b6.pos[1]
+            if int(self.ids.b6.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b6.pos[1]
                 self.ids.b6.pos[1] = Window.size[1] - junkspace
 
     def s2(self,uknwn):
@@ -178,25 +178,25 @@ class Main(BoxLayout):
             self.lock.release()
             if int(self.ids.b9.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b9.pos[1] - Window.size[1]
-                self.ids.b9.pos[1] = Window.size[1] + junkspace - 5*self.ids.b1.height
+                self.ids.b9.pos[1] = Window.size[1] + junkspace - 7*self.ids.b1.height
             if int(self.ids.b10.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b10.pos[1] - Window.size[1]
-                self.ids.b10.pos[1] = Window.size[1] + junkspace - 5*self.ids.b1.height
+                self.ids.b10.pos[1] = Window.size[1] + junkspace - 7*self.ids.b1.height
             if int(self.ids.b11.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b11.pos[1] - Window.size[1]
-                self.ids.b11.pos[1] = Window.size[1] + junkspace - 5*self.ids.b2.height
+                self.ids.b11.pos[1] = Window.size[1] + junkspace - 7*self.ids.b2.height
             if int(self.ids.b7.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b7.pos[1] - Window.size[1]
-                self.ids.b7.pos[1] = Window.size[1] + junkspace - 5*self.ids.b3.height
+                self.ids.b7.pos[1] = Window.size[1] + junkspace - 7*self.ids.b3.height
             if int(self.ids.b8.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b8.pos[1] - Window.size[1]
-                self.ids.b8.pos[1] = Window.size[1] + junkspace - 5*self.ids.b4.height
+                self.ids.b8.pos[1] = Window.size[1] + junkspace - 7*self.ids.b4.height
             if int(self.ids.b12.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b12.pos[1] - Window.size[1]
-                self.ids.b12.pos[1] = Window.size[1] + junkspace - 5*self.ids.b4.height
+                self.ids.b12.pos[1] = Window.size[1] + junkspace - 7*self.ids.b4.height
             if int(self.ids.b13.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b13.pos[1] - Window.size[1]
-                self.ids.b13.pos[1] = Window.size[1] + junkspace - 5*self.ids.b4.height
+                self.ids.b13.pos[1] = Window.size[1] + junkspace - 7*self.ids.b4.height
 
         else:
             self.lock.acquire()
@@ -210,26 +210,26 @@ class Main(BoxLayout):
             self.ids.b13.pos[1] -= self.speed
             self.sf2 = 0
             self.lock.release()
-            if int(self.ids.b9.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b9.pos[1]
+            if int(self.ids.b9.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b9.pos[1]
                 self.ids.b9.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b10.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b10.pos[1]
+            if int(self.ids.b10.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b10.pos[1]
                 self.ids.b10.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b11.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b11.pos[1]
+            if int(self.ids.b11.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b11.pos[1]
                 self.ids.b11.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b7.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b7.pos[1]
+            if int(self.ids.b7.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b7.pos[1]
                 self.ids.b7.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b8.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b8.pos[1]
+            if int(self.ids.b8.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b8.pos[1]
                 self.ids.b8.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b12.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b12.pos[1]
+            if int(self.ids.b12.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b12.pos[1]
                 self.ids.b12.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b13.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b13.pos[1]
+            if int(self.ids.b13.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b13.pos[1]
                 self.ids.b13.pos[1] = Window.size[1] - junkspace
 
     def s3(self,uknwn):
@@ -247,25 +247,25 @@ class Main(BoxLayout):
             self.lock.release()
             if int(self.ids.b14.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b14.pos[1] - Window.size[1]
-                self.ids.b14.pos[1] = Window.size[1] + junkspace - 5*self.ids.b1.height
+                self.ids.b14.pos[1] = Window.size[1] + junkspace - 7*self.ids.b1.height
             if int(self.ids.b15.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b15.pos[1] - Window.size[1]
-                self.ids.b15.pos[1] = Window.size[1] + junkspace - 5*self.ids.b1.height
+                self.ids.b15.pos[1] = Window.size[1] + junkspace - 7*self.ids.b1.height
             if int(self.ids.b16.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b16.pos[1] - Window.size[1]
-                self.ids.b16.pos[1] = Window.size[1] + junkspace - 5*self.ids.b2.height
+                self.ids.b16.pos[1] = Window.size[1] + junkspace - 7*self.ids.b2.height
             if int(self.ids.b17.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b17.pos[1] - Window.size[1]
-                self.ids.b17.pos[1] = Window.size[1] + junkspace - 5*self.ids.b3.height
+                self.ids.b17.pos[1] = Window.size[1] + junkspace - 7*self.ids.b3.height
             if int(self.ids.b18.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b18.pos[1] - Window.size[1]
-                self.ids.b18.pos[1] = Window.size[1] + junkspace -5*self.ids.b4.height
+                self.ids.b18.pos[1] = Window.size[1] + junkspace -7*self.ids.b4.height
             if int(self.ids.b19.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b19.pos[1] - Window.size[1]
-                self.ids.b19.pos[1] = Window.size[1] + junkspace -5*self.ids.b4.height
+                self.ids.b19.pos[1] = Window.size[1] + junkspace -7*self.ids.b4.height
             if int(self.ids.b20.pos[1]) >= int(Window.size[1]):
                 junkspace = self.ids.b20.pos[1] - Window.size[1]
-                self.ids.b20.pos[1] = Window.size[1] + junkspace -5*self.ids.b4.height
+                self.ids.b20.pos[1] = Window.size[1] + junkspace -7*self.ids.b4.height
         else:
             self.lock.acquire()
             self.sf3 = 1
@@ -278,26 +278,26 @@ class Main(BoxLayout):
             self.ids.b20.pos[1] -= self.speed
             self.sf3 = 0
             self.lock.release()
-            if int(self.ids.b14.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b14.pos[1]
+            if int(self.ids.b14.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b14.pos[1]
                 self.ids.b14.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b15.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b15.pos[1]
+            if int(self.ids.b15.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b15.pos[1]
                 self.ids.b15.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b16.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b16.pos[1]
+            if int(self.ids.b16.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b16.pos[1]
                 self.ids.b16.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b17.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b17.pos[1]
+            if int(self.ids.b17.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b17.pos[1]
                 self.ids.b17.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b18.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b18.pos[1]
+            if int(self.ids.b18.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b18.pos[1]
                 self.ids.b18.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b19.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b19.pos[1]
+            if int(self.ids.b19.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b19.pos[1]
                 self.ids.b19.pos[1] = Window.size[1] - junkspace
-            if int(self.ids.b20.pos[1]) <= int(Window.size[1]-5*self.ids.b1.height):
-                junkspace = Window.size[1]-5*self.ids.b1.height - self.ids.b20.pos[1]
+            if int(self.ids.b20.pos[1]) <= int(Window.size[1]-7*self.ids.b1.height):
+                junkspace = Window.size[1]-7*self.ids.b1.height - self.ids.b20.pos[1]
                 self.ids.b20.pos[1] = Window.size[1] - junkspace
     def fixpointloc(self):
         #range of each 9 cells
@@ -347,20 +347,24 @@ class Main(BoxLayout):
 
         r2 = []
 
+        print(*self.ccc, sep = "\n")
+        print(*ptl, sep = "\n")
+        print()
         cd_ = 1
         for i in self.ccc:
             for j in ptl:
+                #print(j[1]," = ",i[0],"\n",j[1]," = ",i[2],"\n",j[2]," = ",i[1],"\n",j[2]," = ",i[3])
                 if j[1] > i[0] and j[1] < i[2] and j[2] > i[1] and j[2] < i[3]:
                     if cd_ <= 6 and cd_ > 3:
                         r2.append(j[0])
-                    cd_ += 1
+            cd_ += 1
 
         score = 0
         sd = {"./ImData/A.PNG":2000,"./ImData/B.PNG":1000,"./ImData/C.PNG":750,"./ImData/D.PNG":500,"./ImData/E.PNG":100,"./ImData/F.PNG":50,"./ImData/G.PNG":0}
-
+        print(r2[0].source, r2[1].source, r2[2].source)
         if r2[0].source == r2[1].source == r2[2].source:
             score += sd[r2[2].source]
-            self.ids.trys.text = "Chances: " + str(int(self.ids.trys.text[9:]) + int(sd[r2[2].source]/100))
+            self.ids.trys.text = str(int(self.ids.trys.text) + int(sd[r2[2].source]/100))
         elif r2[0].source == r2[1].source:
             score += int(sd[r2[1].source]/2)
         elif r2[1].source == r2[2].source:
@@ -368,21 +372,23 @@ class Main(BoxLayout):
         elif r2[0].source == r2[2].source:
             score += int(sd[r2[2].source]/2)
 
-        self.ids.scrs.text = "Score: " + str(int(self.ids.scrs.text[6:]) + score)
+        self.ids.scrs.text = str(int(self.ids.scrs.text) + score)
 
-        if int(self.ids.target.text[9:]) < int(self.ids.scrs.text[6:]):
-            self.ids.lev.text = "Level: " + str(int(self.ids.lev.text[7:]) + 1)
-            self.ids.target.text = "Targate: " + str(int(self.ids.target.text[9:])+2000*int(self.ids.lev.text[7:]))
-        if int(self.ids.target.text[9:]) < int(self.ids.scrs.text[6:]) and int(self.ids.trys.text[9:]) < 1:
-            self.ids.target.text = "Targate: " + str(int(self.ids.target.text[9:]) - 2000*int(self.ids.lev.text[7:]))
-            self.ids.lev.text = "Level: " + str(int(self.ids.lev.text[7:]) - 1)
-            self.ids.trys.text = "Chances: " + str(int(self.ids.trys.text[9:]) + 1 + int(self.ids.lev.text[7:])*10)
-            self.ids.scrs.text = "Score: " + str(int(self.ids.target.text[9:]) - 2000*(int(self.ids.lev.text[7:])-1))
+        print(score)
+
+        if int(self.ids.target.text) < int(self.ids.scrs.text):
+            self.ids.lev.text = str(int(self.ids.lev.text) + 1)
+            self.ids.target.text = str(int(self.ids.target.text)+2000*int(self.ids.lev.text))
+        if int(self.ids.target.text) < int(self.ids.scrs.text) and int(self.ids.trys.text) < 1:
+            self.ids.target.text = str(int(self.ids.target.text) - 2000*int(self.ids.lev.text))
+            self.ids.lev.text = str(int(self.ids.lev.text) - 1)
+            self.ids.trys.text = str(int(self.ids.trys.text) + 1 + int(self.ids.lev.text)*10)
+            self.ids.scrs.text = str(int(self.ids.target.text) - 2000*(int(self.ids.lev.text)-1))
         #print(int(self.ids.trys.text[9:]))
-        self.ids.trys.text = "Chances: " + str(int(self.ids.trys.text[9:]) - int(self.ids.lev.text[7:]))
-        if self.ids.lev.text[7:] == "1" and int(self.ids.trys.text[9:]) < 1:
-            self.ids.scrs.text = "Score: 0"
-            self.ids.trys.text = "Chances: 10"
+        self.ids.trys.text = str(int(self.ids.trys.text) - int(self.ids.lev.text))
+        if self.ids.lev.text == "1" and int(self.ids.trys.text) < 1:
+            self.ids.scrs.text = "0"
+            self.ids.trys.text = "10"
         self.ids.pgpow.value = 1
 
         
