@@ -8,7 +8,6 @@ import time
 
 
 class Main(BoxLayout):
-    
     def pp(self):
         self.speed = 3
         #print(self.ids.gobtn.state)
@@ -43,7 +42,13 @@ class Main(BoxLayout):
     def incSpeed(self,uknwn):
         if self.speed < 31:
             self.speed = self.speed + 1
-            self.ids.pgpow.value += 1 
+            self.ids.pgpow.value += 1
+            if self.speed < 10:
+                self.ids.g1.color = (random.randint(0,255)/255,random.randint(0,255)/255,random.randint(0,255)/255)
+            elif self.speed < 20:
+                self.ids.g2.color = (random.randint(0,255)/255,random.randint(0,255)/255,random.randint(0,255)/255)
+            elif self.speed < 30:
+                self.ids.g3.color = (random.randint(0,255)/255,random.randint(0,255)/255,random.randint(0,255)/255)
         else:
             pass
 
@@ -376,20 +381,30 @@ class Main(BoxLayout):
 
         print(score)
 
+        #Level Clear Case Handler
         if int(self.ids.target.text) < int(self.ids.scrs.text):
             self.ids.lev.text = str(int(self.ids.lev.text) + 1)
             self.ids.target.text = str(int(self.ids.target.text)+2000*int(self.ids.lev.text))
+            self.ids.trys.text = str(int(self.ids.trys.text) + 1 + int(self.ids.lev.text)*10)
+        
+        #Level Fail Handler when Level > 1
         if int(self.ids.target.text) < int(self.ids.scrs.text) and int(self.ids.trys.text) < 1:
             self.ids.target.text = str(int(self.ids.target.text) - 2000*int(self.ids.lev.text))
             self.ids.lev.text = str(int(self.ids.lev.text) - 1)
-            self.ids.trys.text = str(int(self.ids.trys.text) + 1 + int(self.ids.lev.text)*10)
+            self.ids.trys.text = 1 + int(self.ids.lev.text)*10
             self.ids.scrs.text = str(int(self.ids.target.text) - 2000*(int(self.ids.lev.text)-1))
-        #print(int(self.ids.trys.text[9:]))
-        self.ids.trys.text = str(int(self.ids.trys.text) - int(self.ids.lev.text))
+        
+        #Chances Minus on Each Spin
+        self.ids.trys.text = str(int(self.ids.trys.text) - 1)
+        
+        #Level Fail Handler when Level > 1
         if self.ids.lev.text == "1" and int(self.ids.trys.text) < 1:
             self.ids.scrs.text = "0"
             self.ids.trys.text = "10"
         self.ids.pgpow.value = 1
+        self.ids.g1.color = (0,0,0)
+        self.ids.g2.color = (0,0,0)
+        self.ids.g3.color = (0,0,0)
 
         
 class Lucky_Win(App):
