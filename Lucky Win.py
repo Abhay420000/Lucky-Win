@@ -6,6 +6,8 @@ import threading
 import random
 import time
 
+print(Window.size)
+
 
 class Main(BoxLayout):
     def pp(self):
@@ -323,6 +325,7 @@ class Main(BoxLayout):
             self.ccc = [c1_,c2_,c3_,c4,c5,c6,c7,c8,c9]
         
     def scorecalc(self):
+        global clev,plev,llock,skp1
         #print("self.c1= ",self.c1_,"\nself.c2= ",self.c2_,"\nself.c3= ",self.c3_,"\nself.c4= ",self.c4,"\nself.c5= ",self.c5,"\nself.c6= ",self.c6,"\nself.c7= ",self.c7,"\nself.c8= ",self.c8,"\nself.c9= ",self.c9)        
         #aproxx. positions after run of every item
         pt0 = (self.ids.b0,self.ids.b0.pos[0]+self.ids.b0.size[0]/2,self.ids.b0.pos[1]+self.ids.b0.size[1]/2)
@@ -365,7 +368,7 @@ class Main(BoxLayout):
             cd_ += 1
 
         score = 0
-        sd = {"./ImData/A.PNG":2000,"./ImData/B.PNG":1000,"./ImData/C.PNG":750,"./ImData/D.PNG":500,"./ImData/E.PNG":100,"./ImData/F.PNG":50,"./ImData/G.PNG":0}
+        sd = {"./ImData/A.PNG":2000,"./ImData/H.PNG":2000,"./ImData/O.PNG":2000,"./ImData/V.PNG":2000,"./ImData/B.PNG":1000,"./ImData/I.PNG":1000,"./ImData/P.PNG":1000,"./ImData/W.PNG":1000,"./ImData/C.PNG":750,"./ImData/J.PNG":750,"./ImData/Q.PNG":750,"./ImData/X.PNG":750,"./ImData/D.PNG":500,"./ImData/K.PNG":500,"./ImData/R.PNG":500,"./ImData/Y.PNG":500,"./ImData/E.PNG":100,"./ImData/L.PNG":100,"./ImData/S.PNG":100,"./ImData/Z.PNG":100,"./ImData/F.PNG":50,"./ImData/M.PNG":50,"./ImData/T.PNG":50,"./ImData/A1.PNG":50,"./ImData/G.PNG":0,"./ImData/N.PNG":0,"./ImData/U.PNG":0,"./ImData/B2.PNG":0}
         print(r2[0].source, r2[1].source, r2[2].source)
         if r2[0].source == r2[1].source == r2[2].source:
             score += sd[r2[2].source]
@@ -386,6 +389,9 @@ class Main(BoxLayout):
             self.ids.lev.text = str(int(self.ids.lev.text) + 1)
             self.ids.target.text = str(int(self.ids.target.text)+2000*int(self.ids.lev.text))
             self.ids.trys.text = str(int(self.ids.trys.text) + 1 + int(self.ids.lev.text)*10)
+
+            #Level Update
+            clev = self.ids.lev.text
         
         #Level Fail Handler when Level > 1
         if int(self.ids.target.text) < int(self.ids.scrs.text) and int(self.ids.trys.text) < 1:
@@ -406,9 +412,100 @@ class Main(BoxLayout):
         self.ids.g2.color = (0,0,0)
         self.ids.g3.color = (0,0,0)
 
+        #If Current Level Is not Same as Previous one ...
+        if plev != clev:
+            llock = 0
+            skp1 = 1
+        print(plev,clev,llock)
+        #... then images will change according to Level
+        if int(self.ids.lev.text) - 1 % 4 == 0:
+            if skp1 == 1 and llock == 0:
+                data = ["A","B","C","D","E","F","G"]
+                self.change(data)
+                skp1 = 0
+                llock = 1
+
+        elif int(self.ids.lev.text) - 1 % 4 == 1:
+            if llock == 0:
+                data = ["H","I","J","K","L","M","N"]
+                self.change(data)
+                llock = 1
+        elif int(self.ids.lev.text) - 1 % 4 == 2:
+            if llock == 0:
+                data = ["O","P","Q","R","S","T","U"]
+                self.change(data)
+                llock = 1
+        elif int(self.ids.lev.text) - 1 % 4 == 3:
+            if llock == 0:
+                data = ["V","W","X","Y","Z","A1","B2"]
+                self.change(data)
+                llock = 1
+        plev = clev
+    
+    def change(self,data):
+
+        #Changing Images on Level Change
+        print(self.ids)
+        self.ids.b0.source = f"./ImData/{data[0]}.PNG"
+        self.ids.b1.source = f"./ImData/{data[1]}.PNG"
+        self.ids.b2.source = f"./ImData/{data[2]}.PNG"
+        self.ids.b3.source = f"./ImData/{data[3]}.PNG"
+        self.ids.b4.source = f"./ImData/{data[4]}.PNG"
+        self.ids.b5.source = f"./ImData/{data[5]}.PNG"
+        self.ids.b6.source = f"./ImData/{data[6]}.PNG"
         
+        self.ids.b7.source = f"./ImData/{data[0]}.PNG"
+        self.ids.b8.source = f"./ImData/{data[1]}.PNG"
+        self.ids.b9.source = f"./ImData/{data[2]}.PNG"
+        self.ids.b10.source = f"./ImData/{data[3]}.PNG"
+        self.ids.b11.source = f"./ImData/{data[4]}.PNG"
+        self.ids.b12.source = f"./ImData/{data[5]}.PNG"
+        self.ids.b13.source = f"./ImData/{data[6]}.PNG"
+        
+        self.ids.b14.source = f"./ImData/{data[0]}.PNG"
+        self.ids.b15.source = f"./ImData/{data[1]}.PNG"
+        self.ids.b16.source = f"./ImData/{data[2]}.PNG"
+        self.ids.b17.source = f"./ImData/{data[3]}.PNG"
+        self.ids.b18.source = f"./ImData/{data[4]}.PNG"
+        self.ids.b19.source = f"./ImData/{data[5]}.PNG"
+        self.ids.b20.source = f"./ImData/{data[6]}.PNG"
+
+        #Setting Up Positions Of Each Block on Level Change
+        self.ids.b0.pos = (0, Window.size[1])
+        self.ids.b1.pos = (0, Window.size[1] - self.ids.b0.size[1] * 1)
+        self.ids.b2.pos = (0, Window.size[1] - self.ids.b0.size[1] * 2)
+        self.ids.b3.pos = (0, Window.size[1] - self.ids.b0.size[1] * 3)
+        self.ids.b4.pos = (0, Window.size[1] - self.ids.b0.size[1] * 4)
+        self.ids.b5.pos = (0, Window.size[1] - self.ids.b0.size[1] * 5)
+        self.ids.b6.pos = (0, Window.size[1] - self.ids.b0.size[1] * 6)
+
+        self.ids.b7.pos = (self.ids.b0.size[0], Window.size[1])
+        self.ids.b8.pos = (self.ids.b0.size[0], Window.size[1] - self.ids.b0.size[1] * 1)
+        self.ids.b9.pos = (self.ids.b0.size[0], Window.size[1] - self.ids.b0.size[1] * 2)
+        self.ids.b10.pos = (self.ids.b0.size[0], Window.size[1] - self.ids.b0.size[1] * 3)
+        self.ids.b11.pos = (self.ids.b0.size[0], Window.size[1] - self.ids.b0.size[1] * 4)
+        self.ids.b12.pos = (self.ids.b0.size[0], Window.size[1] - self.ids.b0.size[1] * 5)
+        self.ids.b13.pos = (self.ids.b0.size[0], Window.size[1] - self.ids.b0.size[1] * 6)
+
+        self.ids.b14.pos = (self.ids.b0.size[0] * 2, Window.size[1])
+        self.ids.b15.pos = (self.ids.b0.size[0] * 2, Window.size[1] - self.ids.b0.size[1] * 1)
+        self.ids.b16.pos = (self.ids.b0.size[0] * 2, Window.size[1] - self.ids.b0.size[1] * 2)
+        self.ids.b17.pos = (self.ids.b0.size[0] * 2, Window.size[1] - self.ids.b0.size[1] * 3)
+        self.ids.b18.pos = (self.ids.b0.size[0] * 2, Window.size[1] - self.ids.b0.size[1] * 4)
+        self.ids.b19.pos = (self.ids.b0.size[0] * 2, Window.size[1] - self.ids.b0.size[1] * 5)
+        self.ids.b20.pos = (self.ids.b0.size[0] * 2, Window.size[1] - self.ids.b0.size[1] * 6)
+
+
 class Lucky_Win(App):
     pass
 
+
 cd = 1
+skp1 = 0 #For 1st Time when Level Starts
+llock = 1 #1 = Lock and 0 = Unlock (Lock on same and  Unlock on Diff)
+
+clev = 1
+plev = 1
+ 
+
 Lucky_Win().run()
