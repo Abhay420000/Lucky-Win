@@ -6,7 +6,7 @@ import threading
 import random
 import time
 
-print(Window.size)
+#print(Window.size)
 
 
 class Main(BoxLayout):
@@ -18,9 +18,9 @@ class Main(BoxLayout):
     def rollit(self):
         #random spin(UpWards[0] or DownWards[1])
         self.ids.gobtn.disabled = True
-        print(Window.size)
-        print(self.ids.gobtn.size)
-        print(self.ids.b11.size)
+        #print(Window.size)
+        #print(self.ids.gobtn.size)
+        #print(self.ids.b11.size)
         self.spd.cancel()
 
         #Determine the rotation of slots
@@ -58,17 +58,18 @@ class Main(BoxLayout):
         t = time.time()
 
         #Determining Slot rotation time according speed
-        if self.speed < 6:
+        if self.speed < 8:
             time_tr = 2
-        elif self.speed < 10:
+        elif self.speed < 15:
             time_tr = 3
-        elif self.speed < 21:
+        elif self.speed < 22:
             time_tr = 4
         else:
             time_tr = 5 
         
-        print(time_tr," sec run")
+        #print(time_tr," sec run")
 
+        #Timer for rolling
         while (time.time() - t < time_tr):
             time.sleep(1)
         else:
@@ -355,9 +356,9 @@ class Main(BoxLayout):
 
         r2 = []
 
-        print(*self.ccc, sep = "\n")
-        print(*ptl, sep = "\n")
-        print()
+        #print(*self.ccc, sep = "\n")
+        #print(*ptl, sep = "\n")
+        #print()
         cd_ = 1
         for i in self.ccc:
             for j in ptl:
@@ -369,7 +370,7 @@ class Main(BoxLayout):
 
         score = 0
         sd = {"./ImData/A.PNG":2000,"./ImData/H.PNG":2000,"./ImData/O.PNG":2000,"./ImData/V.PNG":2000,"./ImData/B.PNG":1000,"./ImData/I.PNG":1000,"./ImData/P.PNG":1000,"./ImData/W.PNG":1000,"./ImData/C.PNG":750,"./ImData/J.PNG":750,"./ImData/Q.PNG":750,"./ImData/X.PNG":750,"./ImData/D.PNG":500,"./ImData/K.PNG":500,"./ImData/R.PNG":500,"./ImData/Y.PNG":500,"./ImData/E.PNG":100,"./ImData/L.PNG":100,"./ImData/S.PNG":100,"./ImData/Z.PNG":100,"./ImData/F.PNG":50,"./ImData/M.PNG":50,"./ImData/T.PNG":50,"./ImData/A1.PNG":50,"./ImData/G.PNG":0,"./ImData/N.PNG":0,"./ImData/U.PNG":0,"./ImData/B2.PNG":0}
-        print(r2[0].source, r2[1].source, r2[2].source)
+        #print(r2[0].source, r2[1].source, r2[2].source)
         if r2[0].source == r2[1].source == r2[2].source:
             score += sd[r2[2].source]
             self.ids.trys.text = str(int(self.ids.trys.text) + int(sd[r2[2].source]/100))
@@ -382,7 +383,7 @@ class Main(BoxLayout):
 
         self.ids.scrs.text = str(int(self.ids.scrs.text) + score)
 
-        print(score)
+        #print(score)
 
         #Level Clear Case Handler
         if int(self.ids.target.text) < int(self.ids.scrs.text):
@@ -416,7 +417,7 @@ class Main(BoxLayout):
         if plev != clev:
             llock = 0
             skp1 = 1
-        print(plev,clev,llock)
+        #print(plev,clev,llock)
         #... then images will change according to Level
         if int(self.ids.lev.text) - 1 % 4 == 0:
             if skp1 == 1 and llock == 0:
@@ -445,7 +446,7 @@ class Main(BoxLayout):
     def change(self,data):
 
         #Changing Images on Level Change
-        print(self.ids)
+        #print(self.ids)
         self.ids.b0.source = f"./ImData/{data[0]}.PNG"
         self.ids.b1.source = f"./ImData/{data[1]}.PNG"
         self.ids.b2.source = f"./ImData/{data[2]}.PNG"
