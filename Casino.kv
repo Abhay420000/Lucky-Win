@@ -173,7 +173,83 @@ Main:
 					pos:(2*self.size[0], root.height - 6*self.size[1])
 					allow_stretch: True
 					keep_ratio: False
-					
+		Widget:
+			id:bgms
+			size_hint:None,None
+			size:root.size[0]/8, root.size[1]/25
+			pos:root.size[0]/2 - self.size[0]/2, root.size[1] - self.size[1]
+			canvas.before:
+				Color:
+					rgba:(0,0,1,0.5)#(1,0.61,1,0.5)
+				RoundedRectangle:
+					size:bgms.size
+					pos:bgms.pos
+					radius:[5]
+		
+		Widget:
+			id:r1
+			size_hint:None,None
+			size:root.size[0], root.size[1]/6
+			pos: 0, root.size[1] - self.size[1]
+			canvas.before:
+				Color:
+					rgba: (1,0.61,1,0.5)
+				Rectangle:
+					size: r1.size
+					pos: r1.pos
+				Color:
+					rgb: (0,0,0)
+				Line:
+					rectangle:(0, root.size[1] - self.size[1], root.size[0], root.size[1]/6)
+
+		Widget:
+			id:r2
+			size_hint:None,None
+			size:root.size[0], root.size[1]/6
+			pos: 0, root.size[1]/2
+			canvas.before:
+				Color:
+					rgba:(1,0.61,1,0.5)
+				Rectangle:
+					size:r2.size
+					pos:r2.pos
+				Color:
+					rgb: (0,0,0)
+				Line:
+					rectangle:(0, root.size[1]/2, root.size[0], root.size[1]/6)
+
+		
+		BoxLayout:
+			orientation:"horizontal"
+			size_hint:None,None
+			#pos_hint:None,None
+			size: root.size[0]/8, root.size[1]/25
+			pos: root.size[0]/2 - self.size[0]/2, root.size[1] - self.size[1]
+			Button:
+				id:bmof
+				background_normal: ""
+				background_color: (0,0,0,0)
+				on_press: root.config_music()
+				s: "./MSIco/music.png"
+				AsyncImage:
+					source: bmof.s
+					size: bmof.size
+					allow_stretch: True
+					keep_ratio: True
+					pos: bmof.pos
+			Button:
+				id:bsof
+				background_normal: ""
+				background_color: (0,0,0,0)
+				s:"./MSIco/sound.png"
+				on_press: root.config_sound()
+				AsyncImage:
+					source:bsof.s
+					size: bsof.size
+					allow_stretch: True
+					keep_ratio: True
+					pos: bsof.pos
+
 		DCF:
 			color:(0.13,0.13,0.13)
 			size:root.size[0]/16,root.size[1]/2
@@ -235,7 +311,7 @@ Main:
 					font_size: "30dp"
 					id: target
 					font_name:'./Fonts/ARCADE.TTF'
-					text:"2500"
+					text:"250"
 					canvas.before:
 						PushMatrix
 						Rotate:

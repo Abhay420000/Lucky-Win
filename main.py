@@ -5,11 +5,38 @@ from kivy.core.window import Window
 import threading
 import random
 import time
+from kivy.core.audio import Sound, SoundLoader
 
 #print(Window.size)
 
 
 class Main(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.sound = SoundLoader.load('./MSIco/sound.wav')
+        self.music = SoundLoader.load('./MSIco/music.wav')
+        self.music.loop = True
+        self.music.play()
+
+        #Play the sound
+        self.s_cd = True
+
+    def config_sound(self):
+        if self.s_cd == True:
+            self.s_cd = False
+            self.ids.bsof.s = "./MSIco/no-sound.png"
+        elif self.s_cd == False:
+            self.s_cd = True
+            self.ids.bsof.s = "./MSIco/sound.png"
+    
+    def config_music(self):
+        if self.music.state == "play":
+            self.music.stop()
+            self.ids.bmof.s = "./MSIco/no-music.png"
+        elif self.music.state == "stop":
+            self.music.play()
+            self.ids.bmof.s = "./MSIco/music.png"
+
     def pp(self):
         self.speed = 3
         #print(self.ids.gobtn.state)
@@ -57,6 +84,9 @@ class Main(BoxLayout):
     def timer(self):
         t = time.time()
 
+        if self.s_cd == True:
+            self.sound.play()
+
         #Determining Slot rotation time according speed
         if self.speed < 8:
             time_tr = 2
@@ -103,6 +133,9 @@ class Main(BoxLayout):
         self.ids.gobtn.disabled = False
         self.scorecalc()
     
+        if self.s_cd == True:
+            self.sound.stop()
+
     def s1(self,uknwn):
         if self.c1 == 0:
             self.lock.acquire()
@@ -388,14 +421,14 @@ class Main(BoxLayout):
         #Level Clear Case Handler
         if int(self.ids.target.text) < int(self.ids.scrs.text):
             self.ids.lev.text = str(int(self.ids.lev.text) + 1)
-            self.ids.target.text = str(int(self.ids.target.text)+2000*int(self.ids.lev.text))
+            self.ids.target.text = str(int(self.ids.target.text) + 2000*int(self.ids.lev.text))
             self.ids.trys.text = str(int(self.ids.trys.text) + 1 + int(self.ids.lev.text)*10)
 
             #Level Update
             clev = self.ids.lev.text
         
         #Level Fail Handler when Level > 1
-        if int(self.ids.target.text) < int(self.ids.scrs.text) and int(self.ids.trys.text) < 1:
+        if (int(self.ids.target.text) > int(self.ids.scrs.text)) and (int(self.ids.trys.text) == 1):
             self.ids.target.text = str(int(self.ids.target.text) - 2000*int(self.ids.lev.text))
             self.ids.lev.text = str(int(self.ids.lev.text) - 1)
             self.ids.trys.text = 1 + int(self.ids.lev.text)*10
@@ -425,7 +458,6 @@ class Main(BoxLayout):
                 self.change(data)
                 skp1 = 0
                 llock = 1
-
         elif int(self.ids.lev.text) - 1 % 4 == 1:
             if llock == 0:
                 data = ["H","I","J","K","L","M","N"]
@@ -497,7 +529,7 @@ class Main(BoxLayout):
         self.ids.b20.pos = (self.ids.b0.size[0] * 2, Window.size[1] - self.ids.b0.size[1] * 6)
 
 
-class Lucky_Win(App):
+class Casino(App):
     pass
 
 
@@ -507,6 +539,7 @@ llock = 1 #1 = Lock and 0 = Unlock (Lock on same and  Unlock on Diff)
 
 clev = 1
 plev = 1
- 
 
-Lucky_Win().run()
+
+
+Casino().run()
