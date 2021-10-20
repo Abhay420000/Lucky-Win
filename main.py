@@ -437,7 +437,7 @@ class Main(BoxLayout):
         if (int(self.ids.target.text) > int(self.ids.scrs.text)) and (int(self.ids.trys.text) == 1):
             self.ids.target.text = str(int(self.ids.target.text) - 2000*int(self.ids.lev.text))
             self.ids.lev.text = str(int(self.ids.lev.text) - 1)
-            self.ids.trys.text = 1 + int(self.ids.lev.text)*10
+            self.ids.trys.text = str(1 + int(self.ids.lev.text)*10)
             self.ids.scrs.text = str(int(self.ids.target.text) - 2000*(int(self.ids.lev.text)-1))
         
         #Chances Minus on Each Spin
