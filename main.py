@@ -64,7 +64,7 @@ class Main(BoxLayout):
         self.slot3 = Clock.schedule_interval(self.s3, random.random() / nL[random.randint(0,4)])
 
         #Moving wheels for 1-5 seconds
-        t = threading.Thread(target = self.timer)
+        t = threading.Thread(target = self.timer, daemon= True)
         t.start()
         self.lock = threading.Lock()
 
