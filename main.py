@@ -18,7 +18,7 @@ class Main(BoxLayout):
         self.music.loop = True
         self.music.play()
 
-        #Play the sound
+        #Play the sound if it True
         self.s_cd = True
 
     def config_sound(self):
@@ -69,6 +69,9 @@ class Main(BoxLayout):
         self.lock = threading.Lock()
 
     def incSpeed(self,uknwn):
+        """
+            Used for increasing speed when button is pressed.
+        """
         if self.speed < 31:
             self.speed = self.speed + 1
             self.ids.pgpow.value += 1
@@ -137,6 +140,7 @@ class Main(BoxLayout):
             self.sound.stop()
 
     def s1(self,uknwn):
+        """Slot 1"""
         if self.c1 == 0:
             self.lock.acquire()
             self.sf1 = 1
@@ -205,6 +209,7 @@ class Main(BoxLayout):
                 self.ids.b6.pos[1] = Window.size[1] - junkspace
 
     def s2(self,uknwn):
+        """Slot 2"""
         if self.c2 == 0:
             self.lock.acquire()
             self.sf2 = 1
@@ -274,6 +279,7 @@ class Main(BoxLayout):
                 self.ids.b13.pos[1] = Window.size[1] - junkspace
 
     def s3(self,uknwn):
+        """Slot 3"""
         if self.c3 == 0:
             self.lock.acquire()
             self.sf3 = 1
@@ -437,7 +443,7 @@ class Main(BoxLayout):
         #Chances Minus on Each Spin
         self.ids.trys.text = str(int(self.ids.trys.text) - 1)
         
-        #Level Fail Handler when Level > 1
+        #Level Fail Handler when Level = 1
         if self.ids.lev.text == "1" and int(self.ids.trys.text) < 1:
             self.ids.scrs.text = "0"
             self.ids.trys.text = "10"
